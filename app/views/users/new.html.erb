@@ -1,0 +1,15 @@
+<div class="form-group">
+  <h1>New profile</h1>
+  <%= form_for :user, url: '/users' do |f| %>
+      Your name: <%= f.text_field :name %> <br>
+      Your surname: <%= f.text_field :surname %> <br>
+      Your email: <%= f.text_field :email %> <br>
+      Password: <%= f.password_field :password %> <br>
+      Your birthday: <%= f.date_field :birthdate %> <br>
+      Your address: <%= f.text_field :address %> <br>
+      Your height: <%= f.text_field :height %> cm. <br>
+      Your weight: <%= f.text_field :weight %> kg. <br>
+      Goal weight: <%= f.text_field :goalweight %> kg. <br>
+      <%= f.submit "Registration" %>
+  <% end %>
+</div>
