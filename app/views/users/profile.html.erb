@@ -1,2 +1,7 @@
 <h1><%= current_user.name %> <%= current_user.surname %> profile</h1>
-<p></p>
+<p>Calories <%= current_user.calories %></p>
+<p>New calories</p>
+<%= form_for :user do |f| %>
+    <%= f.text_field :calories %>
+    <%= f.submit "Add calories" %>
+<% end %>

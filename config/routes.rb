@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
 
   get '/profile' => 'users#profile'
+  post 'profile/update'
 end
