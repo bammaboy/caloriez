@@ -1,0 +1,16 @@
+<div class="edit">
+  <h1>Update your profile</h1>
+  <div>
+    <div>
+      <%= form_for :user, url: '/edit' do |f| %>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %> <br>
+          <%= f.text_field :surname, class: 'form-control', placeholder: 'Surname'  %> <br>
+          <%= f.text_field :email, class: 'form-control', placeholder: 'Email'  %> <br>
+          <%= f.text_field :address, class: 'form-control', placeholder: 'Address: country, city'  %> <br>
+          <%= f.text_field :height, class: 'form-control', placeholder: 'Height, cm.' %><br>
+          <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <% end %> <br>
+      <%= link_to "Go back", '/profile' %>
+    </div>
+  </div>
+</div>

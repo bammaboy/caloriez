@@ -1,7 +1,40 @@
-<h1><%= current_user.name %> <%= current_user.surname %> profile</h1>
-<p>Calories <%= current_user.calories %></p>
-<p>New calories</p>
-<%= form_for :user do |f| %>
-    <%= f.text_field :calories %>
-    <%= f.submit "Add calories" %>
-<% end %>
+<div class="profile">
+  <h1><%= current_user.name %> <%= current_user.surname %> profile</h1>
+  <p>Calories <%= current_user.calories %></p>
+  <%= form_for :user, url: user_path(id: current_user.id), html: { method: 'put' } do |f| %>
+      <%= f.text_field :calories, class: 'form-control', placeholder: 'add new calories' %> <br>
+      <%= f.submit 'Add calories', class: 'btn btn-success'%>
+  <% end %>
+  <%= link_to 'Edit profile', edit_user_path(current_user) %>
+</div>
+
+  <canvas id="myChart" width="400" height="200"></canvas>
+  <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ["day 1", "day 2", "day 3", "day 4", "day 5", "day 6"],
+              datasets: [{
+                  label: 'My calories',
+                  data: [2873, 2310, 3784, 2100, 2567, 5146],
+                  backgroundColor: [
+                      'rgba(0, 0, 0, 0.1)',
+                  ],
+                  borderColor: [
+                      'rgba(0,0,0,0.9)',
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero:false
+                      }
+                  }]
+              }
+          }
+      });
+  </script>

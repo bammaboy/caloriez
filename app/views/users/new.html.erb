@@ -1,16 +1,14 @@
-<div class="form-group">
+<div class="sign-up">
   <h1>New profile</h1>
   <%= form_for :user, url: '/users' do |f| %>
-      Your name: <%= f.text_field :name %> <br>
-      Your surname: <%= f.text_field :surname %> <br>
-      Your email: <%= f.text_field :email %> <br>
-      Password: <%= f.password_field :password %> <br>
-      Your birthday: <%= f.date_field :birthdate %> <br>
-      Your address: <%= f.text_field :address %> <br>
-      Your height: <%= f.text_field :height %> cm. <br>
-      Your weight: <%= f.text_field :weight %> kg. <br>
-      Goal weight: <%= f.text_field :goalweight %> kg. <br>
-      Calories: <%= f.text_field :calories %> <br>
-      <%= f.submit "Registration" %>
+      <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %> <br>
+      <%= f.text_field :surname, class: 'form-control', placeholder: 'Surame'  %> <br>
+      <%= f.text_field :email, class: 'form-control', placeholder: 'Email'  %> <br>
+      <%= f.password_field :password, class: 'form-control', placeholder: 'Password'  %> <br>
+      <%= f.text_field :address, class: 'form-control', placeholder: 'Address: country, city'  %> <br>
+      <%= f.text_field :height, class: 'form-control', placeholder: 'Height, cm.' %><br>
+      <%= f.text_field :weight, class: 'form-control', placeholder: 'Weight, kg.' %><br>
+      <%= f.text_field :goalweight, class: 'form-control', placeholder: 'Goal weight, kg.' %><br>
+      <%= f.submit "Registration", class: 'btn btn-success' %>
   <% end %>
 </div>

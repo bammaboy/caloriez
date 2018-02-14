@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def new
     @user = User.new
   end
@@ -14,9 +13,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+  end
+
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
+    @user = current_user
+    if @user.update(user_params)
       redirect_to '/profile'
     else
       render 'edit'
@@ -26,7 +29,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name,:surname, :email, :password,:birthdate,
+    params.require(:user).permit(:name,:surname, :email, :password, :birthdate,
                                  :address, :height, :weight, :goalweight, :calories)
   end
 end

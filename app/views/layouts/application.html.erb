@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Caloriez</title>
+    <title>Caloriez - Home</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-  <% if current_user %>
-      Signed in as <%= current_user.name %> via <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
-  <% else %>
-      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-  <% end %>
+  <body class="body">
+  <div id="wrapper">
+    <div class="header">
 
-  <%= yield %>
+        <div class="header-top-left">
+          <ul>
+            <li>
+              <h1>Calorie-Z</h1>
+            </li>
+          </ul>
+        </div>
+        <div class="header-right">
+          <ul>
+            <li>
+              <% if current_user %>
+                  Signed in as <%= current_user.name %> via <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
+              <% else %>
+                  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+
+
+              <% end %>
+            </li>
+          </ul>
+        </div>
+
+
+
+
+
+    </div>
+    <%= yield %>
+  </div>
+
+
   </body>
 </html>

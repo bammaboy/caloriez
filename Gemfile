@@ -8,6 +8,7 @@ end
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'chart-js-rails', '~> 0.1.4'
 
 gem 'rails', '~> 5.1.4'
 gem 'sqlite3'
