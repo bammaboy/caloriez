@@ -10,21 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206170928) do
+ActiveRecord::Schema.define(version: 20180215134543) do
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "surname"
     t.string "email"
     t.string "password_digest"
+    t.string "firstname"
+    t.string "lastname"
     t.date "birthdate"
-    t.string "address"
-    t.integer "height"
-    t.float "weight"
-    t.float "goalweight"
+    t.float "current_weight"
+    t.float "goal_weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "calories"
   end
 
 end
