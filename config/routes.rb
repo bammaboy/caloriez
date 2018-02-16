@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :sessions
 
-  root 'users#profile'
+  root 'users#index'
 
   get '/login' => 'sessions#login'
   post '/login' => 'sessions#create'
