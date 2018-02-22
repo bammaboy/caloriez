@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Caloriez</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Caloriez - Home</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <div id="container">
+    <div id="header">
+      <div>
+        <ul>
+          <li class="header-top-left"><h1>Calorie-Z</h1></li>
+          <li class="header-right">
+            <% if current_user %>  Login as <%= link_to current_user.firstname, '/profile' %> | <%= link_to "Logout", '/logout' %>
+          <% else %>
+              <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+          <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="navigation">
+    <ul>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><% if current_user %> <%= link_to 'Settings', edit_user_path(current_user) %></li>
+      <% end %>
+    </ul>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+     <div id="clear">
+       
+     </div>
+     <div id="footer">Footer
+      </div>
+    
+    </div>
+</body>
 </html>
+          

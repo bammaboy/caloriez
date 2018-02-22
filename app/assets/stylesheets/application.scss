@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+ @import "bootstrap";
+
+ body {
+  background: #ffffff;
+  color: #000000;
+  font-family: "Ubuntu Light";
+  font-size: 17px;
+}
+#container {
+  background: #ffffff;
+  margin: 30px auto;
+  width: 900px;
+  height: 1000px;
+}
+#header {
+  background: #ffffff;
+  height: 60px;
+  width: 900px;
+}
+#navigation {
+  background: #ffffff;
+  width: 900px;
+  height: 20px;
+  list-style: none;
+}
+#content {
+  background: #ffffff;
+  float: right;
+  padding-top: 20px;
+  width: 900px;
+  height: 600px;
+}
+#clear {
+  clear:both;
+}
+#footer {
+  background: #ffffff;
+  height: 180px;
+  width: 900px;
+}
+
+
+ 
+
+ #wrapper{
+  max-width: 1080px;
+  margin: auto;
+  padding: 10px;
+  font-family: "Ubuntu Light";
+  font-size: 17px;
+}
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+ul{
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+li{
+  display: inline;
+  padding-right: 20px;
+}
+.header{
+  padding: 20px;
+  list-style: none;
+}
+.header-top-left {
+  float: left;
+  margin-top: 5px;
+}
+.header-right {
+  float: right;
+  margin-top: 5px;
+}
+.profile, .login, .sign-up, .edit{
+  margin: auto;
+  padding: 40px;
+  width: 500px;
+  h1{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+#login-form{
+  width: 100p;
+}
